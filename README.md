@@ -31,3 +31,25 @@
 - Email: SMTP integration via Flask-Mail
 - Containerization: Docker
 - Orchestration: Kubernetes (Minikube)
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+## 📂 Project Structure
+incident-management/
+├── app/                 # Flask app logic
+│   ├── templates/       # HTML templates
+│   ├── auth.py          # Authentication routes
+│   ├── emails.py        # Email sending logic
+│   ├── forms.py         # Flask-WTF forms
+│   ├── models.py        # Database models
+│   └── routes.py        # Core incident routes
+├── k8s/                 # Kubernetes manifests
+│   ├── deployment.yaml
+│   ├── ingress.yaml
+│   ├── namespace.yaml
+│   ├── secret.yaml
+│   └── service.yaml
+├── Dockerfile           # Container build file
+├── requirements.txt     # Python dependencies
+├── run.py               # Flask entrypoint
+└── .env                 # Environment variables
+
