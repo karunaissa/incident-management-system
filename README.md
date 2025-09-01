@@ -56,8 +56,8 @@ incident-management/
    ````
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-##⚡ Setup & Deployment
-###1️⃣ Prerequisites
+## ⚡ Setup & Deployment
+### 1️⃣ Prerequisites
 - Minikube
 - kubectl
 - Docker
@@ -87,7 +87,7 @@ kubectl get svc -n incident-mgmt
 ### 6️⃣ Port Forward the Service (Recommended for Windows users)
 - kubectl port-forward svc/incident-app-service -n incident-mgmt 5000:80
 --------------------------------------------------------------------------------------------------------------------
-##vNow open in browser:
+## Now open in browser:
 -  👉 http://localhost:5000
 
 ### 📧 Email Notifications
