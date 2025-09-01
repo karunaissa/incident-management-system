@@ -34,7 +34,7 @@
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## 📂 Project Structure
-incident-management/
+'''incident-management/
 ├── app/                 # Flask app logic
 │   ├── templates/       # HTML templates
 │   ├── auth.py          # Authentication routes
@@ -51,5 +51,5 @@ incident-management/
 ├── Dockerfile           # Container build file
 ├── requirements.txt     # Python dependencies
 ├── run.py               # Flask entrypoint
-└── .env                 # Environment variables
+└── .env                 # Environment variables '''
 
