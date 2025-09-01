@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+            background-color: #f9f9f9;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 20px;
+        }
+        h2 {
+            color: #0056b3;
+        }
+        p {
+            line-height: 1.5;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #777;
+            text-align: center;
+        }
+        .button {
+            display: inline-block;
+            background-color: #0056b3;
+            color: white !important;
+            padding: 10px 18px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        .button:hover {
+            background-color: #003d80;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>New Incident Assigned</h2>
+        <p>Hi <strong>{{ engineer.username }}</strong>,</p>
+        <p>You have been assigned a new incident:</p>
+        <ul>
+            <li><strong>Title:</strong> {{ incident.title }}</li>
+            <li><strong>Description:</strong> {{ incident.description }}</li>
+            <li><strong>Status:</strong> {{ incident.status }}</li>
+        </ul>
+        <p>Please log in to the system to review and take action.</p>
+        <p>
+            <a href="{{ url_for('main.view_incident', incident_id=incident.id, _external=True) }}" class="button">
+                View Incident
+            </a>
+        </p>
+        <div class="footer">
+            <p>This is an automated email. Please do not reply directly.</p>
+        </div>
+    </div>
+</body>
+</html>

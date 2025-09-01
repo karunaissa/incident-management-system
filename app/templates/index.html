@@ -1,5 +1,8 @@
-{% extends 'base.html' %}
-
-{% block content %}
-<h1>Welcome to the Incident Management System</h1>
-{% endblock %}
+<!doctype html>
+<html>
+<head><title>Incident Tracker</title></head>
+<body>
+    <h1>Welcome to the Incident Tracker</h1>
+    <a href="{{ url_for('main.list_incidents') }}">View Incidents</a>
+</body>
+</html>

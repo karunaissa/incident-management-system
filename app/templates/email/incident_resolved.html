@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Incident Resolved</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f9f9f9; padding: 20px; }
+    .container { background: #ffffff; border-radius: 8px; padding: 20px; max-width: 600px; margin: auto; }
+    h2 { color: #27ae60; }
+    p { font-size: 14px; color: #333; }
+    .footer { font-size: 12px; color: #888; margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Incident Resolved</h2>
+    <p>Hello Admin,</p>
+    <p>The incident <strong>{{ incident.title }}</strong> has been marked as <strong>Resolved</strong>.</p>
+    <p><strong>Description:</strong><br>{{ incident.description }}</p>
+    <p><strong>Status:</strong> {{ incident.status }}</p>
+    <div class="footer">
+      <p>This is an automated notification from your Incident Management System.</p>
+    </div>
+  </div>
+</body>
+</html>

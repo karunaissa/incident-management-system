@@ -1,0 +1,6 @@
+New Incident Created:
+
+Title: {{ incident.title }}
+Description: {{ incident.description }}
+
+Please login to view more details.

@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Incident #{{ incident.id }} - {{ incident.title }}</h2>
+<p><strong>Description:</strong> {{ incident.description }}</p>
+<p><strong>Status:</strong> {{ incident.status }}</p>
+<p><strong>Assigned to:</strong> {{ incident.assigned_to.username if incident.assigned_to else 'None' }}</p>
+<p><strong>Created at:</strong> {{ incident.created_at }}</p>
+{% if incident.resolved_at %}
+  <p><strong>Resolved at:</strong> {{ incident.resolved_at }}</p>
+{% endif %}
+<a href="{{ url_for('main.list_incidents') }}" class="btn btn-secondary">Back</a>
+{% endblock %}
+
