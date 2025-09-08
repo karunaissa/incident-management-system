@@ -85,10 +85,11 @@ kubectl get svc -n incident-mgmt
 ```
 
 ### 6️⃣ Port Forward the Service (Recommended for Windows users)
-- kubectl port-forward svc/incident-app-service -n incident-mgmt 5000:80
+- kubectl port-forward svc/incident-app-service -n incident-mgmt 8888:80
 --------------------------------------------------------------------------------------------------------------------
+
 ## Now open in browser:
--  👉 http://localhost:5000
+-  👉 http://localhost:8888
 
 ### 📧 Email Notifications
 
