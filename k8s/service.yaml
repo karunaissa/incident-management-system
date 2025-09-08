@@ -10,4 +10,4 @@ spec:
     - protocol: TCP
       port: 80        # Service port
       targetPort: 5000  # Container port
-  type: NodePort   
+  type: ClusterIP   
