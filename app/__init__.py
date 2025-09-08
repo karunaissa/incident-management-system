@@ -5,15 +5,14 @@ from flask_mail import Mail
 from .models import db, User
 from .routes import main as main_blueprint
 from .auth import auth as auth_blueprint
-from prometheus_client import generate_latest, CONTENT_TYPE_LATEST, Gauge
 
-# Initialize extensions
+# ➤ Prometheus
+from prometheus_client import Counter, generate_latest, CONTENT_TYPE_LATEST
+from flask import Response
+
 mail = Mail()
 login_manager = LoginManager()
 login_manager.login_view = 'auth.login'
-
-# Create a gauge metric
-app_up = Gauge('incident_app_up', 'Whether the app is running')
 
 @login_manager.user_loader
 def load_user(user_id):
@@ -23,6 +22,8 @@ def create_app():
     app = Flask(__name__)
     app.config.from_object(Config)
     mail.init_app(app)
+
+    # Initialize extensions
     db.init_app(app)
     login_manager.init_app(app)
 
@@ -41,14 +42,13 @@ def create_app():
         db.session.rollback()
         return render_template('errors/500.html'), 500
 
-    # Register blueprints
+    # ➤ Register blueprints
     app.register_blueprint(main_blueprint)
     app.register_blueprint(auth_blueprint)
 
-    # Add the /metrics route here
-    @app.route('/metrics')
+    # ➤ PROMETHEUS METRICS ENDPOINT
+    @app.route("/metrics")
     def metrics():
-        app_up.set(1)  # Set to 1 if the app is running
-        return generate_latest(app_up), 200, {'Content-Type': CONTENT_TYPE_LATEST}
+        return Response(generate_latest(), mimetype=CONTENT_TYPE_LATEST)
 
     return app

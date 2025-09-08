@@ -8,6 +8,9 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
+# Install gunicorn (production WSGI server)
+RUN pip install gunicorn
+
 # Copy all app code
 COPY . .
 

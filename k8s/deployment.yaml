@@ -15,7 +15,8 @@ spec:
     spec:
       containers:
       - name: incident-app
-        image: calix114/incident-app:latest  
+        image: calix114/incident-app:latest
+        imagePullPolicy: IfNotPresent  
         ports:
         - containerPort: 5000
         envFrom:
